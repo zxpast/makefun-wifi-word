@@ -8,6 +8,7 @@
 //
 // The entry: "Narcoleptic" — home Wi-Fi that randomly falls asleep
 // mid-stream, mid-call, mid-download, then wakes up like nothing happened.
+// A narcoleptic network: asleep without warning, awake without apology.
 
 import { mkdirSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
@@ -25,6 +26,7 @@ if (chars.length < 1 || chars.length > 20) {
 if (ENTRY.trim().length === 0) {
   throw new Error('gate: entry is only whitespace');
 }
+// One word means no spaces, tabs, or newlines anywhere inside it.
 if (/\s/.test(ENTRY)) {
   throw new Error('gate: entry must be exactly one word (no whitespace)');
 }
